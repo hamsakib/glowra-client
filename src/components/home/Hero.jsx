@@ -105,9 +105,9 @@ export function Hero() {
   const { data } = usePublicStats();
   const s = data?.stats;
   return (
-    <section className="relative overflow-hidden border-b border-border lg:min-h-[60vh] lg:max-h-[70vh]">
+    <section className="relative overflow-hidden border-b border-border lg:flex lg:min-h-[60vh] lg:items-center">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_80%_20%,var(--primary-soft),transparent_70%),radial-gradient(50%_50%_at_10%_90%,var(--secondary-soft),transparent_70%)]" />
-      <Container className="grid grid-cols-1 items-center gap-10 py-12 lg:grid-cols-2 lg:py-14">
+      <Container className="grid grid-cols-1 items-center gap-10 py-12 lg:grid-cols-2 lg:py-10">
         <div className="animate-fade-up">
           <p className="eyebrow mb-4">Authentic K-beauty · Delivered in Bangladesh</p>
           <h1 className="text-display">
@@ -131,7 +131,7 @@ export function Hero() {
               [0, 1, 2].map((i) => <div key={i} className="skeleton h-12" />)
             )}
           </dl>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-fg">
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-fg lg:hidden">
             <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-secondary" /> Sourced from authorised importers</li>
             <li className="flex items-center gap-2"><Truck className="h-4 w-4 text-secondary" /> Cash on delivery nationwide</li>
           </ul>
