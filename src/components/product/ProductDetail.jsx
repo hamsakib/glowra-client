@@ -123,7 +123,7 @@ export function ProductDetail({ product }) {
         </div>
 
         <section className="mt-16" aria-label="Product information">
-          <div role="tablist" aria-label="Product information" className="flex gap-1 overflow-x-auto border-b border-border">
+          <div role="tablist" aria-label="Product information" className="relative flex gap-1 overflow-x-auto border-b border-border">
             {TABS.map((t) => (
               <button
                 key={t.id}

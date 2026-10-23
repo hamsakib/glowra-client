@@ -106,7 +106,7 @@ export function DashboardShell({ children }) {
             <p className="text-xs text-muted-fg capitalize">{user.role} account</p>
           </div>
         </div>
-        <nav className="overflow-x-auto pb-2 lg:overflow-visible lg:rounded-xl lg:border lg:border-border lg:bg-surface lg:p-3">
+        <nav className="relative overflow-x-auto pb-2 lg:overflow-visible lg:rounded-xl lg:border lg:border-border lg:bg-surface lg:p-3">
           {isAdmin ? (
             <>
               <p className="mb-2 hidden px-3 text-xs font-semibold tracking-wider text-muted-fg uppercase lg:block">Admin</p>

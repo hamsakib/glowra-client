@@ -10,7 +10,7 @@ import { EmptyState } from "./EmptyState";
  */
 export function Table({ columns, rows, loading, sort, onSort, empty, rowKey = "_id", caption }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-border">
+    <div className="relative overflow-x-auto rounded-xl border border-border">
       <table className="w-full min-w-[640px] border-collapse text-left text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead className="bg-muted/60 text-xs text-muted-fg uppercase">
