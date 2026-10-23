@@ -6,6 +6,8 @@
 - **Server repository:** https://github.com/hamsakib/glowra-server
 - **Live API:** https://glowra-server.vercel.app
 
+![Glowra home page](docs/screenshot.jpg)
+
 ## Demo credentials
 
 | Role | Email | Password |
@@ -30,6 +32,32 @@ The login page also has one-click **Demo User** and **Demo Admin** buttons that 
 ## Tech stack
 
 Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TanStack Query · React Hook Form + Zod · Recharts · next-themes · lucide-react · sonner
+
+## Dependencies
+
+| Package | Version |
+| --- | --- |
+| `@hookform/resolvers` | ^5.9.2 |
+| `@tanstack/react-query` | ^5.104.5 |
+| `clsx` | ^2.1.1 |
+| `lucide-react` | ^1.61.0 |
+| `next` | 16.4.2 |
+| `next-themes` | ^0.4.6 |
+| `react` | 19.3.0 |
+| `react-dom` | 19.3.0 |
+| `react-hook-form` | ^7.90.0 |
+| `recharts` | ^3.10.1 |
+| `sonner` | ^2.0.8 |
+| `zod` | ^4.6.7 |
+
+Development:
+
+| Package | Version |
+| --- | --- |
+| `@tailwindcss/turbopack` | ^4 |
+| `eslint` | ^9 |
+| `eslint-config-next` | 16.4.2 |
+| `tailwindcss` | ^4 |
 
 ## Run locally
 
