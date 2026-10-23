@@ -2,9 +2,9 @@
 
 **Glowra** is a skincare marketplace: shoppers explore and buy skincare products, leave reviews and track orders; sellers list their own products; admins run the store from a dashboard with live charts. This is the Next.js frontend. The backend is an Express + MongoDB API.
 
-- **Live website:** {{SITE_URL}}
+- **Live website:** https://glowra-client.vercel.app
 - **Server repository:** https://github.com/hamsakib/glowra-server
-- **Live API:** {{API_URL}}
+- **Live API:** https://glowra-server.vercel.app
 
 ## Demo credentials
 
