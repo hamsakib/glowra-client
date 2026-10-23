@@ -36,10 +36,9 @@ const COLUMNS = [
 
 function SocialIcon({ name }) {
   const paths = {
-    Facebook: "M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.7-.6Z",
-    Instagram: "M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm5.5-1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z",
-    YouTube: "M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8ZM10 15V9l5.2 3L10 15Z",
-    TikTok: "M16.5 3c.4 2.2 1.8 3.7 4 3.9v3.3a7.4 7.4 0 0 1-4-1.2v6.3a6 6 0 1 1-6-6h.6v3.3a2.8 2.8 0 1 0 2.2 2.7V3h3.2Z",
+    GitHub: "M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3",
+    LinkedIn: "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z",
+    WhatsApp: "M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2Z",
   };
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
@@ -48,11 +47,11 @@ function SocialIcon({ name }) {
   );
 }
 
+// The developer's own profiles: Glowra is a portfolio project with no brand accounts of its own.
 const SOCIALS = [
-  ["Facebook", "https://www.facebook.com/"],
-  ["Instagram", "https://www.instagram.com/"],
-  ["YouTube", "https://www.youtube.com/"],
-  ["TikTok", "https://www.tiktok.com/"],
+  ["GitHub", "https://github.com/hamsakib/glowra-client"],
+  ["LinkedIn", "https://www.linkedin.com/in/hasan-al-mahmud-89a504240/"],
+  ["WhatsApp", "https://wa.me/8801842001223"],
 ];
 
 export function Footer() {
@@ -102,11 +101,11 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-muted-fg sm:flex-row sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} Glowra. All rights reserved. Portfolio project: orders, customers and reviews are sample data.</p>
+          <p>© {new Date().getFullYear()} Glowra. All rights reserved. Portfolio project by Hasan Al Mahmud: orders, customers and reviews are sample data.</p>
           <ul className="flex items-center gap-2">
             {SOCIALS.map(([name, href]) => (
               <li key={name}>
-                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Glowra on ${name}`} className="flex h-10 w-10 items-center justify-center rounded-xl transition hover:bg-muted hover:text-primary">
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Developer on ${name}`} className="flex h-10 w-10 items-center justify-center rounded-xl transition hover:bg-muted hover:text-primary">
                   <SocialIcon name={name} />
                 </a>
               </li>
