@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* Class-based dark mode, toggled by next-themes on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. Three brand colours (rose, teal, amber) + a stone neutral scale.
+ * Every colour pair below meets WCAG AA (4.5:1) for normal text in its mode.
+ */
+:root {
+  --bg: #fbf8f6;
+  --surface: #ffffff;
+  --muted: #f3eeea;
+  --border: #e7e0da;
+  --fg: #1c1917;
+  --muted-fg: #57534e;
+
+  --primary: #be185d; /* rose */
+  --primary-fg: #ffffff;
+  --primary-soft: #fce7f3;
+  --primary-soft-fg: #9d174d;
+
+  --secondary: #0f766e; /* teal */
+  --secondary-fg: #ffffff;
+  --secondary-soft: #ccfbf1;
+  --secondary-soft-fg: #115e59;
+
+  --accent: #b45309; /* amber */
+  --accent-soft: #fef3c7;
+  --accent-soft-fg: #92400e;
+
+  --danger: #b91c1c;
+  --danger-soft: #fee2e2;
+  --ring: #be185d;
+  --shadow: 0 1px 2px rgb(28 25 23 / 0.04), 0 8px 24px -12px rgb(28 25 23 / 0.12);
+}
+
+.dark {
+  --bg: #121010;
+  --surface: #1c1917;
+  --muted: #292524;
+  --border: #3a3431;
+  --fg: #f5f5f4;
+  --muted-fg: #c4bdb8;
+
+  --primary: #f472b6;
+  --primary-fg: #1c1917;
+  --primary-soft: #3b1426;
+  --primary-soft-fg: #fbcfe8;
+
+  --secondary: #2dd4bf;
+  --secondary-fg: #042f2e;
+  --secondary-soft: #0f2e2b;
+  --secondary-soft-fg: #99f6e4;
+
+  --accent: #fbbf24;
+  --accent-soft: #3a2a0c;
+  --accent-soft-fg: #fde68a;
+
+  --danger: #f87171;
+  --danger-soft: #3b1515;
+  --ring: #f472b6;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted-fg: var(--muted-fg);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-fg: var(--primary-soft-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-fg: var(--secondary-fg);
+  --color-secondary-soft: var(--secondary-soft);
+  --color-secondary-soft-fg: var(--secondary-soft-fg);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-soft-fg: var(--accent-soft-fg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --shadow-card: var(--shadow);
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to { background-position: 400px 0; }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--primary-soft-fg);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+/* Typography scale: display / h1 / h2 / h3 / body-lg / body / small */
+@layer components {
+  .text-display { @apply font-display text-4xl leading-tight font-semibold tracking-tight sm:text-5xl lg:text-6xl; }
+  .heading-1 { @apply font-display text-3xl leading-tight font-semibold tracking-tight sm:text-4xl; }
+  .heading-2 { @apply font-display text-2xl leading-snug font-semibold tracking-tight sm:text-3xl; }
+  .heading-3 { @apply text-lg leading-snug font-semibold; }
+  .eyebrow { @apply text-xs font-semibold tracking-widest text-primary uppercase; }
+  .body-lg { @apply text-base leading-relaxed text-muted-fg sm:text-lg; }
+  .skeleton {
+    background: linear-gradient(90deg, var(--muted) 0%, var(--border) 50%, var(--muted) 100%);
+    background-size: 800px 100%;
+    @apply animate-shimmer rounded-xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
