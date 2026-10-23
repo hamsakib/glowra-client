@@ -38,6 +38,7 @@ const MEMBER_LINKS = [
   { href: "/explore", label: "Explore", mega: true },
   { href: "/dashboard", label: "Dashboard" },
   { href: "/blog", label: "Journal" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
